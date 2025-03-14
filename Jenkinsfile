@@ -10,13 +10,14 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                script {
-                    sh './output'
-                }
-            }
+       stage('Test') {
+    steps {
+        script {
+            sh './wrong_binary' // Intentional error
         }
+    }
+}
+
 
         stage('Deploy') {
             steps {
